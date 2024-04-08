@@ -12,7 +12,7 @@ network:
   # Worker IPs are simply incremented from the control IP.
   control_ip: 192.168.1.201
   dns_servers:
-    - 192.168.1.108
+    - 192.168.1.44
     - 8.8.8.8
   pod_cidr: 172.16.1.0/16
   service_cidr: 172.17.1.0/18
@@ -21,7 +21,7 @@ nodes:
     cpu: 2
     memory: 4096
   workers:
-    count: 2
+    count: 3
     cpu: 2
     memory: 4096
 # Mount additional shared folders from the host into each virtual machine.

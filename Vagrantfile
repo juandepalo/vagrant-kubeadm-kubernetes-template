@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_check_update = true
   config.vm.define "master" do |master|
     master.vm.hostname = "master-node"
-    master.vm.network "public_network", bridge: "enp2s0", ip: settings["network"]["control_ip"]
+    master.vm.network "public_network", bridge: "wlp4s0", ip: settings["network"]["control_ip"]
     #master.vm.network "private_network", ip: settings["network"]["control_ip"]
     if settings["shared_folders"]
       settings["shared_folders"].each do |shared_folder|
@@ -71,7 +71,7 @@ Vagrant.configure("2") do |config|
       node.vm.hostname = "worker-node0#{i}"
       #node.vm.disksize.size = '50GB'
       #node.vm.disk :disk, size: "50GB", primary: true
-      node.vm.network "public_network", bridge: "enp2s0", ip: IP_NW + "#{IP_START + i}"
+      node.vm.network "public_network", bridge: "wlp4s0", ip: IP_NW + "#{IP_START + i}"
       #node.vm.network "private_network", ip: IP_NW + "#{IP_START + i}"
       if settings["shared_folders"]
         settings["shared_folders"].each do |shared_folder|
